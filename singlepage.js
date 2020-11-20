@@ -7,6 +7,13 @@ function showPage(page){
 
     // show div provided in the arg
     document.querySelector(`#${page}`).style.display = 'block';
-
-
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    document.querySelectorAll('button').forEach(button => {
+        button.onclick = function(){ 
+            showPage(this.dataset.page);
+        }
+    })
+});
